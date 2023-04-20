@@ -1,69 +1,81 @@
 {
-	"name": "rails-migrate",
-	"displayName": "rails-migrate",
-	"description": "Automate migration",
-	"version": "1.0.4",
-	"author": "Daniel Shotonwa <danielshotonwa53@gmail.com> (https://github.com/danielshow)",
-	"engines": {
-		"vscode": "^1.40.0"
-	},
-	"icon": "assets/rails.png",
-	"keywords": [
-		"rails",
-		"migration",
-		"db:migrate",
-		"ruby",
-		"auto"
-	],
-	"categories": [
-		"Other"
-	],
-	"bugs": {
-		"url": "https://github.com/Danielshow/rails-auto-migrate.git/issues"
-	},
-	"publisher": "danielshow",
-	"activationEvents": [
-		"workspaceContains: **/db/migrate",
-		"onCommand:rails-migrate.runMigration",
-		"onCommand:rails-migrate.openLatestMigration"
-	],
-	"main": "./extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "rails-migrate.runMigration",
-				"title": "Run Rails Migration"
-			},
-			{
-				"command": "rails-migrate.openLatestMigration",
-				"title": "Open Latest Migration"
-			}
-		]
-	},
-	"scripts": {
-		"lint": "eslint .",
-		"pretest": "yarn run lint",
-		"test": "node ./test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.40.0",
-		"@types/glob": "^7.1.1",
-		"@types/mocha": "^7.0.2",
-		"@types/node": "^13.11.0",
-		"eslint": "^6.8.0",
-		"glob": "^7.1.6",
-		"mocha": "^7.1.2",
-		"typescript": "^3.8.3",
-		"vscode-test": "^1.3.0"
-	},
-	"dependencies": {
-		"chokidar": "^3.4.0",
-		"cross-spawn": "^7.0.3",
-		"shell-escape": "^0.2.0"
-	},
-	"homepage": "https://github.com/Danielshow/rails-auto-migrate.git#readme",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Danielshow/rails-auto-migrate.git"
-	}
+  "name": "antivim-rails-migrate",
+  "displayName": "antivim-rails-migrate",
+  "description": "Automate migration Forked from Danielshow",
+  "version": "1.0.4",
+  "author": "Khoa Nguyen <thanhkhoa.it@gmail.com> (https://github.com/ThanhKhoaIT)",
+  "engines": {
+    "vscode": "^1.40.0"
+  },
+  "icon": "assets/rails.png",
+  "keywords": [
+    "rails",
+    "migration",
+    "db:migrate",
+    "db:migrate:down",
+    "db:migrate:up",
+    "ruby",
+    "auto"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "bugs": {
+    "url": "https://github.com/ThanhKhoaIT/antivim-rails-migrate.git/issues"
+  },
+  "publisher": "ThanhKhoaIT",
+  "activationEvents": [
+    "workspaceContains: **/db/migrate",
+    "onCommand:antivim-rails-migrate.runMigration",
+    "onCommand:antivim-rails-migrate.downCurrentMigration",
+    "onCommand:antivim-rails-migrate.upCurrentMigration",
+    "onCommand:antivim-rails-migrate.openLatestMigration"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "antivim-rails-migrate.runMigration",
+        "title": "Run Rails Migration"
+      },
+      {
+        "command": "antivim-rails-migrate.openLatestMigration",
+        "title": "Open Latest Migration"
+      },
+      {
+        "command": "antivim-rails-migrate.downCurrentMigration",
+        "title": "Down Current Migration"
+      },
+      {
+        "command": "antivim-rails-migrate.upCurrentMigration",
+        "title": "Up Current Migration"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.40.0",
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.6",
+    "mocha": "^7.1.2",
+    "typescript": "^3.8.3",
+    "vscode-test": "^1.3.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.4.0",
+    "cross-spawn": "^7.0.3",
+    "shell-escape": "^0.2.0"
+  },
+  "homepage": "https://github.com/ThanhKhoaIT/antivim-rails-migrate.git#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThanhKhoaIT/antivim-rails-migrate.git"
+  }
 }

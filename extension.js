@@ -18,7 +18,7 @@ function activate(context) {
     .on('add', path => utils.fileAdded(path))
 
   let railsMigration = vscode.commands.registerCommand(
-    "rails-migrate.runMigration",
+    "antivim-rails-migrate.runMigration",
     function () {
       utils.runMigration(projectWorkspace);
     }
@@ -26,14 +26,30 @@ function activate(context) {
 
 
   let openMigration = vscode.commands.registerCommand(
-    "rails-migrate.openLatestMigration",
+    "antivim-rails-migrate.openLatestMigration",
     function () {
       utils.openLatestMigration(projectWorkspace);
     }
   );
 
+  let downCurrentMigration = vscode.commands.registerCommand(
+    "antivim-rails-migrate.downCurrentMigration",
+    function () {
+      utils.downCurrentMigration(projectWorkspace);
+    }
+  );
+
+  let upCurrentMigration = vscode.commands.registerCommand(
+    "antivim-rails-migrate.upCurrentMigration",
+    function () {
+      utils.upCurrentMigration(projectWorkspace);
+    }
+  );
+
   context.subscriptions.push(railsMigration);
   context.subscriptions.push(openMigration);
+  context.subscriptions.push(downCurrentMigration);
+  context.subscriptions.push(upCurrentMigration);
 }
 exports.activate = activate;
 
